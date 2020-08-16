@@ -1,0 +1,190 @@
+/* Import Montserrat font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Custom properties */
+
+:root {
+    /* Using this in p line-height */
+    --leading: 2em;
+}
+
+body {
+    /* Use Montserrat font, but use sans-serif if the browser cannot download it. */
+    font-family: 'Montserrat', sans-serif;
+    /* Override default browser margin */
+    margin: 0;
+}
+
+.hero-bg {
+    background: #307099 url("../images/bg.jpg");
+
+    /* Change which part of the background image you can see */
+    /* First is horizontal and second is vertical. 0% 0% is top left, 100% 100% is bottom right.
+    Specifying only one value means the other value will be 50%. Default value is 0% 0%*/
+    background-position: 12% 83%;
+
+    /* Use color to change the colour of text */
+    color: white;
+    text-align: center;
+
+    /* This padding-bottom allows you to see the picture of the orange*/
+    /* You want to use em for padding and design, but rem for text */
+    padding-bottom: 4em;
+}
+
+header {
+    padding: 1em 0;
+}
+
+/* Any a elements in hero-bg */
+.hero-bg a {
+    color: white;
+    /* Get rid of underline on link */
+    text-decoration: none;
+    font-weight: bold;
+    /* You want to use em for padding and design, but rem for text */
+    font-size: 1.2rem
+}
+
+section {
+    /* Give some space on left and right */
+    margin: 0 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 2em 01.2em;
+}
+h1 span {
+    text-transform: uppercase;
+    /* Block = it will be on its own line, nothing will float to the left or right of it */
+    display: block;
+    font-size: 1.4rem;
+
+    /* You need to set the parent element relative so that the "absolute" can be relative to this element */
+    position: relative;
+    z-index: 1;
+}
+
+/* For light blue underline underneath "The Healthy" */
+h1 span::before {
+    content: ' ';
+    /*You can break out of the traditional box model and do an underline*/
+    /* If you don't use 'relative' in the parent, the blue underline will be at the bottom of the browser */
+    position: absolute;
+    width: 3em;
+    background: #00BFFF;
+    height: 0.4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -0.3em
+
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+.form-container {
+    background-color: white;
+    /* -1 em for left and right margin allows you to override the 1em margin in hero-bg so that we can stretch to the sides of the screen */
+    margin: 2em -1em 0;
+    padding: 2em;
+}
+
+label {
+    color: #2D7D98;
+    font-weight: bold;
+    /* We don't want anything floating to the left or right */
+    display: block;
+    margin-bottom: 1em;
+    /* Note: default font-size is 1em */
+    font-size: 1.2em;
+}
+
+/* Affect the type text input */
+input[type=text] {
+    border: 1px solid #707070;
+    /* Width 100% pushes the input element all the way out to the left and right*/
+    width: 100%;
+    padding: 1em;
+    /* Gives a slight corner. Something like 3 em will give a pill shape. */
+    border-radius: .5em;
+    margin-top: 1.2em;
+
+    /* You need this box-sizing: border-box to prevent this text input element from stretching further right than the find food now button
+       This happens because the padding 1em is added to the side of the width 100%.
+
+       You must always add this whenever you are using padding together with width.
+    */
+    box-sizing: border-box;
+}
+
+.form-container p {
+    color: gray;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+}
+
+/* Affect the type button input */
+input[type=button] {
+    background-color: #f89104;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    /* cursor: pointer Changes cursor to a hand when you hover over the button */
+    cursor: pointer;
+
+}
+
+/* Make the button input change to slightly darker when you hover over it */
+input[type=button]:hover {
+    background-color: rgb(216, 126, 1);
+}
+
+/* Resets the 1em set in 'section' to 0 */
+.authentic {
+    margin: 0;
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    /* We will add relative so that we can add an underscore later */
+    position: relative;
+}
+
+/* For light blue underline underneath "The Healthy" */
+h2::before {
+    content: ' ';
+    /*You can break out of the traditional box model and do an underline*/
+    /* If you don't use 'relative' in the parent, the blue underline will be at the bottom of the browser */
+    position: absolute;
+    width: 8em;
+    background: #00BFFF;
+    height: 0.4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -0.3em
+
+}
+
+img {
+    /* width 100% makes an image fluid/responsive to size changes */
+    width: 100%;
+}
+
+p {
+    line-height: var(--leading);
+}

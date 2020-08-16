@@ -188,3 +188,15 @@ img {
 p {
     line-height: var(--leading);
 }
+
+/* Use min-width since we */
+@media (min-width: 730px) {
+    section {
+        /* Add margin to left and right (originally no margin at all) when screen gets too big */
+        margin: 0 4em;
+    }
+    .form-container {
+        /* Readjust to -4 em instead of -1 em since the section left-right margin is now 4 em.  */
+        margin: 2em -4em 0;
+    }
+}

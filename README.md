@@ -1,2 +1,6 @@
 # css-practice-project
-Practising use of SCSS and CSS Grid
+Various projects to practice CSS and SCSS layouts.
+
+## Project List
+
+1. "Eating Experience" - Following https://www.youtube.com/watch?v=QA0XpGhiz5w

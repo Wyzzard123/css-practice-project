@@ -301,3 +301,24 @@ p {
 
 
 }
+
+.top {
+    /* Let it fade in 2 seconds. Forwards means do it once and don't loop.
+    We must then define fadeIn using @keyframes*/
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    /* For simple animations, use from and to */
+    from {
+        /* Start from invisible to visible */
+        opacity: 0;
+
+        /* Start from 2 em from the top and then go down to the normal position*/
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

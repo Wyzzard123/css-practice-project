@@ -50,17 +50,25 @@
         let btn = document.getElementById('cta-btn');
         let overlay = document.getElementById('overlay');
 
-
-        // If someone clicks on the button, do this:
-        btn.addEventListener('click', () => {
+        function addOverlayClass(event) {
             // Changes CSS display property of the overlay to grid (ie makes it visible)
             overlay.style.display = 'grid';
             overlay.classList.add('animate-overlay');
-            // Remove the overlay class.
+
             setTimeout(()=> {
+                // Remove the overlay animate class so we can add it back.
                 overlay.classList.remove('animate-overlay');
+                // Get rid of overlay so we can click on other things again
+                overlay.style.display = 'none';
             }, 3000);
-        })
+        }
+
+        function alertClick(event) {
+            alert(1)
+        }
+        // If someone clicks on the button, do this:
+        btn.addEventListener('click', addOverlayClass);
+
     </script>
 </body>
 </html>

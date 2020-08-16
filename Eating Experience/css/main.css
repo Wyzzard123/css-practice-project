@@ -189,7 +189,7 @@ p {
     line-height: var(--leading);
 }
 
-/* Use min-width since we */
+/* Use min-width since our design is mobile first */
 @media (min-width: 730px) {
     section {
         /* Add margin to left and right (originally no margin at all) when screen gets too big */
@@ -199,4 +199,105 @@ p {
         /* Readjust to -4 em instead of -1 em since the section left-right margin is now 4 em.  */
         margin: 2em -4em 0;
     }
+
+
+}
+
+@media (min-width: 930px) {
+    .hero-bg {
+        /*Make text align left instead of centre when screen is much bigger*/
+        text-align: left;
+    }
+    /* Gets rid of margin to left and right of h1 so that everything aligns.*/
+    .hero-bg h1 {
+        margin: 2em 0;
+    }
+
+    .hero-bg p {
+        /* Change p left-right to 0*/
+        margin: 0 0 3em;
+    }
+
+    /* Override width of 100% so that the boxes etc dont stretch all the way. They only now stretch 65% of the way. */
+    .hero-bg section {
+        width: 65%;
+    }
+
+    .form-container {
+        /* No longer has negative margin*/
+        margin: 2em 0 0;
+        /* Padding same */
+        padding: 2em;
+        /* Round the corners */
+        border-radius: .5em;
+        /* Add shadow. First two values for off to bottom and right. 10px blur. Then black shadow with 0.3 opacity*/
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    }
+
+    form {
+        /* Flexbox and grid are two ways to organize your layout.
+           For simpler elements, you can use flex. For larger more complex things, use CSS Grid.
+        */
+        /* Flex automatically floats the elements right and left. */
+        display: flex;
+
+
+    }
+    .form-left {
+        /* Makes the form take up 70% of the container */
+        /* Note that you need to make the button element have a width of 30% for this to work properly. */
+        width: 70%;
+    }
+    label {
+        margin: 0;
+    }
+
+    input[type="button"]{
+        /* Fix the weirdly big height with height: fit-content */
+        height: fit-content;
+        font-size: 1.1em;
+        /* Give it space from the input */
+        margin-left: 1em;
+        /* Push away from top*/
+        margin-top: 2.2em;
+        padding: .7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p {
+        /* There was too much margin bottom on the p element */
+        margin-bottom: 0;
+    }
+
+    /* Use CSS Grid to split up the bottom section*/
+    section.authentic {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        /* Without defining the areas, the columns are switched around compared to the mockup */
+        grid-template-areas:
+                "bowl content";
+    }
+
+    .right-col {
+        /*Assign to the correct grid template areas*/
+        grid-area: content;
+
+        /* % padding allows us to increase padding as we get bigger */
+        padding: 0 10%;
+        text-align: left;
+
+        /* Vertically aligns to the center. */
+        align-self: center;
+    }
+
+    img {
+        /*Assign to the correct grid template areas*/
+        grid-area: bowl;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+
 }

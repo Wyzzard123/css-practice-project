@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- This overlay class will make the entire document dark-->
+    <div class="overlay" id="overlay">
+        <h3>Searching now...</h3>
+    </div>
     <div class="hero-bg">
         <section class="top">
             <header>
@@ -26,7 +30,8 @@
                         <input type="text" name="city" id="city">
                         <p>Example: "San Diego"</p>
                     </div>
-                    <input type="button" value="Find Food Now">
+<!--                    Give id of call to action button -->
+                    <input type="button" value="Find Food Now" id="cta-btn">
                 </form>
             </div>
         </section>
@@ -39,5 +44,23 @@
         </div>
         <img src="images/food.jpg" alt="Picture of food in a bowl">
     </section>
+
+    <script>
+        // Simple JavaScript to make screen dark and for a pop up to appear saying finding food when we click the cta-btn.
+        let btn = document.getElementById('cta-btn');
+        let overlay = document.getElementById('overlay');
+
+
+        // If someone clicks on the button, do this:
+        btn.addEventListener('click', () => {
+            // Changes CSS display property of the overlay to grid (ie makes it visible)
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay');
+            // Remove the overlay class.
+            setTimeout(()=> {
+                overlay.classList.remove('animate-overlay');
+            }, 3000);
+        })
+    </script>
 </body>
 </html>

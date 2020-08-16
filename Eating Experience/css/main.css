@@ -189,6 +189,40 @@ p {
     line-height: var(--leading);
 }
 
+.overlay {
+    /* position: fixed allows us to break out of the box model and overlay everything and also maintain the
+    full screen coverage when scrolling down
+    NOTE: tutorial showed position: absolute, but scrolling causes problems. */
+    position: fixed;
+
+    /* 100 viewport height and 100% width meaning we cover the entire screen*/
+    height: 100vh;
+    width: 100%;
+
+    /* Black with 0.9 opacity */
+    background: rgba(0,0,0,0.9);
+
+    /* Change z-index to 1 (all the way in front) so we can't see other stuff on top of it.
+    You need this because the fadeIn animation makes the faded in elements appear on top of this overlay */
+    z-index: 1;
+    /* Quickly allows us to move the "Searching now" to the center of the screen
+    Note that place-content does not work without setting display:grid
+    However, in the beginning, we will set display: none and opacity: 0 so that the overlay will only appear when someone clicks
+    the orange button */
+    place-content: center;
+    display: none;
+    /* opacity: 0 allows us to fade in later from 0 opacity */
+    opacity: 0;
+
+    /* Color white so we can see the text */
+    color: white;
+}
+
+.animate-overlay {
+    /* Create overlay animation and don't loop. We have to define an "overlay" animation below with @keyframes. */
+    animation: overlay 3s forwards;
+}
+
 /* Use min-width since our design is mobile first */
 @media (min-width: 730px) {
     section {
@@ -321,4 +355,26 @@ p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes overlay {
+    /* Multi step animation. We want this to fade in, stay a while, then fade out
+    This plays over 3 seconds.
+    */
+    /* Over the first 30% of 3 seconds, fade in.*/
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    /* For 30% to 70% of 3 seconds, keep the overlay there. */
+    70% {
+        opacity: 1;
+    }
+    /* Between 70% to 100% of 3 seconds, fade out. */
+    100% {
+        opacity: 0;
+    }
+
 }

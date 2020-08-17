@@ -1,0 +1,76 @@
+:root {
+    /* for nav links when not hovering*/
+    --nav-link-dark-gray: #8b8b8b;
+    /* for nav links when hovering */
+    --nav-link-gray: #c6cccd;
+
+    /*Colour of search buttons and bottom nav bar*/
+    --search-button-gray: #f3f3f3;
+
+    /* Colour of google logo */
+    --google-blue: #5b95f5;
+    --google-red: #ea4335;
+    --google-yellow: #fbbc05;
+    --google-green: #34a853;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    align-items: center;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    position: relative;
+    margin-left: 1em;
+    font-size: 0.8rem;
+}
+
+/* TODO - gray colours not working properly when hovered */
+
+nav a:visited {
+    color: var(--nav-link-dark-gray);
+}
+
+nav a:hover {
+    color: var(--nav-link-gray);
+    text-decoration-line: underline;
+}
+
+nav a.no-underline:hover {
+    text-decoration-line: none;
+}
+
+nav a:link {
+    color: var(--nav-link-dark-gray);
+    fill: var(--nav-link-dark-gray);
+}
+
+nav a svg, nav a img {
+    margin-top: 0.3em;
+    width: 2em;
+}
+
+nav a svg:hover {
+    fill:black;
+}
+
+nav a img {
+    background-color: var(--nav-link-dark-gray);
+    border-radius: 5em;
+}
+
+nav a img:hover {
+    background-color:black;
+}

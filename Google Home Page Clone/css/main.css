@@ -7,6 +7,10 @@
     /*Colour of search buttons and bottom nav bar*/
     --search-button-gray: #f3f3f3;
 
+    /*Shortcut picture background*/
+    --shortcut-button-hover-gray: #e5e7e8;
+    --shortcut-button-gray: #f1f3f4;
+
     /* Colour of google logo */
     --google-blue: #5b95f5;
     --google-red: #ea4335;
@@ -52,12 +56,12 @@ nav a.no-underline:hover {
 
 nav a:link {
     color: var(--nav-link-dark-gray);
-    fill: var(--nav-link-dark-gray);
 }
 
 nav a svg, nav a img {
     margin-top: 0.3em;
     width: 2em;
+    fill: var(--shortcut-button-hover-gray);
 }
 
 nav a svg:hover {
@@ -65,12 +69,12 @@ nav a svg:hover {
 }
 
 nav a img {
-    background-color: var(--nav-link-dark-gray);
+    background-color: var(--shortcut-button-gray);
     border-radius: 5em;
 }
 
 nav a img:hover {
-    background-color:black;
+    background-color:var(--shortcut-button-hover-gray);
 }
 
 
@@ -170,3 +174,64 @@ input:focus{
 .google-languages a:hover {
     text-decoration-line: underline;
 }
+
+
+/* Shortcuts container*/
+.shortcuts-container {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(5, auto);
+    /*grid-template-columns: auto auto auto auto auto;*/
+
+    /* No longer in center once you make the screen smaller... TODO - Fix this*/
+    grid-gap: 1%;
+    text-align: center;
+    margin: auto;
+    font-size: smaller;
+}
+
+.shortcuts-container a {
+    border-radius: 50%;
+    width: 200%;
+}
+
+.shortcuts-container img {
+    /*Make images fit the container.*/
+    width: 60%;
+    height: auto;
+    background-color: var(--shortcut-button-gray);
+    border-radius: 50%;
+    /*object-fit: contain;*/
+    /*transform: scale(0.5)*/
+}
+
+.shortcut, .add-shortcut {
+    grid-area: shortcut;
+    /*background-color: var(--nav-link-dark-gray);*/
+    padding: 10px;
+    border-radius: 10%;
+    width: 5em;
+    height: 5em;
+}
+
+.shortcut:hover, .add-shortcut:hover {
+    background-color: var(--shortcut-button-hover-gray);
+    cursor:pointer;
+}
+
+/*!* First breakpoint at 650 px*!*/
+/*@media (max-width: 300px) {*/
+/*    .shortcuts-container {*/
+/*        grid-template-columns: auto auto auto;*/
+/*    }*/
+/*}*/
+
+
+/*@media (max-width: 690px) {*/
+/*    .shortcuts-container {*/
+/*        grid-template-columns: auto auto auto auto;*/
+/*    }*/
+/*}*/
+/*.shortcuts-container img:hover {*/
+/*    background-color: var(--shortcut-button-hover-gray);*/
+/*}*/

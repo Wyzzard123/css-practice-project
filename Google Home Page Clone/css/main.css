@@ -155,3 +155,18 @@ input:focus{
     margin: -1px 3px;
     cursor: pointer;
 }
+
+/* Google language text*/
+.google-languages {
+    display: inline;
+    width: 60%;
+    margin: 2rem 0 0 2rem;
+    font-size: smaller;
+    text-align: center;
+}
+.google-languages a:link {
+    text-decoration-line: none;
+}
+.google-languages a:hover {
+    text-decoration-line: underline;
+}

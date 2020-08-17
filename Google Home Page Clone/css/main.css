@@ -74,3 +74,26 @@ nav a img {
 nav a img:hover {
     background-color:black;
 }
+
+
+/* Google Logo */
+.logo {
+    margin-top: 8rem;
+    text-align: center;
+    font-size: 5em;
+}
+.blue {
+    color: var(--google-blue);
+}
+.red {
+    color: var(--google-red);
+}
+.yellow {
+    color: var(--google-yellow);
+}
+.green {
+    color: var(--google-green);
+}
+
+
+/* Search bar */

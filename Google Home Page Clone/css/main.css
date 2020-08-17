@@ -193,7 +193,7 @@ input:focus{
 
 .shortcuts-container img {
     /*Make images fit the container.*/
-    width: 60%;
+    width: 70%;
     height: auto;
     background-color: var(--shortcut-button-gray);
     border-radius: 50%;
@@ -227,6 +227,9 @@ input:focus{
 .shortcuts-container a:visited {
     text-decoration: none;
     color: black;
+}
+.shortcuts-container h5 {
+    margin-top: 1em;
 }
 
 /* First breakpoint at 690 px*/

@@ -181,18 +181,14 @@ input:focus{
     display: grid;
     width: 60%;
     grid-template-columns: repeat(5, auto);
+
     /*grid-template-columns: auto auto auto auto auto;*/
 
     /* No longer in center once you make the screen smaller... TODO - Fix this*/
-    grid-gap: 1%;
+    /*grid-gap: 1%;*/
     text-align: center;
     margin: auto;
     font-size: smaller;
-}
-
-.shortcuts-container a {
-    border-radius: 50%;
-    width: 200%;
 }
 
 .shortcuts-container img {
@@ -219,19 +215,52 @@ input:focus{
     cursor:pointer;
 }
 
-/*!* First breakpoint at 650 px*!*/
-/*@media (max-width: 300px) {*/
-/*    .shortcuts-container {*/
-/*        grid-template-columns: auto auto auto;*/
-/*    }*/
-/*}*/
+.shortcuts-container a {
+    text-decoration: none;
+}
+
+.shortcuts-container a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.shortcuts-container a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* First breakpoint at 690 px*/
+@media (max-width: 690px) {
+    .shortcuts-container {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .nine-to-ten {
+        display: none;
+    }
+
+}
 
 
-/*@media (max-width: 690px) {*/
-/*    .shortcuts-container {*/
-/*        grid-template-columns: auto auto auto auto;*/
-/*    }*/
-/*}*/
-/*.shortcuts-container img:hover {*/
-/*    background-color: var(--shortcut-button-hover-gray);*/
-/*}*/
+@media (max-width: 650px) {
+    .shortcuts-container {
+        grid-template-columns: auto auto auto;
+    }
+
+    .search-buttons {
+        display: flex;
+        width: 60%;
+    }
+
+    .search-buttons > button {
+        margin: 0 4px;
+        border: none;
+        padding: 0.4em;
+        border-radius: 0.3em;
+    }
+    .seven-to-eight {
+        display: none;
+    }
+
+
+}

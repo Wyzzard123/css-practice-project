@@ -100,28 +100,57 @@ nav a img:hover {
     margin: 2rem auto;
     width: 43%;
     border-radius: 3em;
+    border-color: var(--nav-link-gray);
+    border-style: solid;
     height: 2.4rem;
+    min-width: 400px;
+}
+
+.searchbar-container:hover {
     box-shadow: 0 0 5px var(--nav-link-gray);
+
 }
 
 .magnifying-glass{
     width:10%;
-    background: url('../images/search.svg') no-repeat 1em 0.5em;
+    background: url('../images/search.svg') no-repeat center;
     background-size: 1.3em 1.3em;
+    padding: 10px;
 }
 
 .searchbar-container > input {
     width:80%;
     border-style: none;
 }
+
 input:focus{
     outline:none;
 }
 
 .microphone {
     width:10%;
-    background: url('../images/microphone.svg') no-repeat 1em 0.5em;
+    background: url('../images/microphone.svg') no-repeat center;
     background-size: 1.3em 1.3em;
+    padding: 10px;
 }
 
-/*}*/
+/* Google Search and I'm Feeling Lucky buttons */
+.search-buttons {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+
+}
+.search-buttons > button {
+    margin: 0 4px;
+    border: none;
+    padding: 0.7em;
+    border-radius: 0.3em;
+}
+.search-buttons > button:hover {
+    border: 1px solid var(--nav-link-gray);
+    overflow: hidden;
+    /* Offset margin by 1 px to avoid moving everything when the border appears */
+    margin: -1px 3px;
+}

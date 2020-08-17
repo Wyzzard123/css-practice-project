@@ -153,4 +153,5 @@ input:focus{
     overflow: hidden;
     /* Offset margin by 1 px to avoid moving everything when the border appears */
     margin: -1px 3px;
+    cursor: pointer;
 }

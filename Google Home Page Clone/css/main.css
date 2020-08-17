@@ -17,8 +17,6 @@
 
 body {
     font-family: Arial, sans-serif;
-
-
 }
 
 /* Navigation Bar */
@@ -97,3 +95,33 @@ nav a img:hover {
 
 
 /* Search bar */
+.searchbar-container {
+    display: flex;
+    margin: 2rem auto;
+    width: 43%;
+    border-radius: 3em;
+    height: 2.4rem;
+    box-shadow: 0 0 5px var(--nav-link-gray);
+}
+
+.magnifying-glass{
+    width:10%;
+    background: url('../images/search.svg') no-repeat 1em 0.5em;
+    background-size: 1.3em 1.3em;
+}
+
+.searchbar-container > input {
+    width:80%;
+    border-style: none;
+}
+input:focus{
+    outline:none;
+}
+
+.microphone {
+    width:10%;
+    background: url('../images/microphone.svg') no-repeat 1em 0.5em;
+    background-size: 1.3em 1.3em;
+}
+
+/*}*/

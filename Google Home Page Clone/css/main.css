@@ -180,6 +180,8 @@ input:focus{
 .shortcuts-container {
     display: grid;
     width: 60%;
+    /*TODO - column gap repeats at the very end. See this link for possible solution:
+        https://stackoverflow.com/questions/45090726/the-difference-between-percentage-and-fr-units-in-css-grid-layout*/
     grid-template-columns: repeat(5, auto);
 
     /*grid-template-columns: auto auto auto auto auto;*/
@@ -202,7 +204,6 @@ input:focus{
 }
 
 .shortcut, .add-shortcut {
-    grid-area: shortcut;
     /*background-color: var(--nav-link-dark-gray);*/
     padding: 10px;
     border-radius: 10%;

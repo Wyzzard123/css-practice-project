@@ -283,6 +283,8 @@ footer.footer-nav-bar {
 .footer-right {
     float: right;
     width: 300px;
+    text-align: right;
+    margin-right: 30px;
 
 }
 .footer-right > a {

@@ -336,7 +336,7 @@ footer.footer-nav-bar {
     color: var(--customize-pen);
 }
 
-/* First breakpoint at 690 px*/
+
 @media (max-width: 800px) {
     .shortcuts-container {
         grid-template-columns: auto auto auto auto;

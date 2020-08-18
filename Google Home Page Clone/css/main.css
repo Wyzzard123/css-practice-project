@@ -332,14 +332,16 @@ footer.footer-nav-bar {
     footer {
         display:none;
     }
+
+    .customize {
+        display: none;
+    }
 }
 
 @media (max-width: 450px) {
     .shortcuts-container {
         display: none;
     }
-    .customize {
-        display: none;
-    }
+
 }
 

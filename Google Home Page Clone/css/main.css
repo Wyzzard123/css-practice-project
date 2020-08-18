@@ -17,6 +17,10 @@
     --google-yellow: #fbbc05;
     --google-green: #34a853;
 
+    /*    Customize colours*/
+    --customize-pen: #2479e9;
+    --customize-highlighted: #e8f0fe;
+
 }
 
 body {
@@ -105,7 +109,8 @@ nav a img:hover {
     margin: 2rem auto;
     width: 43%;
     border-radius: 3em;
-    border-color: var(--nav-link-gray);
+    border-color: var(--search-button-gray);
+    border-width: 0.1em;
     border-style: solid;
     height: 2.4rem;
     min-width: 300px;
@@ -284,7 +289,7 @@ footer.footer-nav-bar {
     float: right;
     width: 300px;
     text-align: right;
-    margin-right: 30px;
+    margin-right: 40px;
 
 }
 .footer-right > a {
@@ -292,8 +297,47 @@ footer.footer-nav-bar {
 
 }
 
+/* Cutomize pen */
+.customize {
+    position: fixed;
+    bottom: 6rem;
+    right: 1rem;
+    display: flex;
+    border-radius: 3em;
+    box-shadow: 0 0 5px var(--nav-link-gray);
+    width: 6rem;
+    height: 33px;
+}
+
+.customize:hover {
+    background-color: var(--customize-highlighted);
+    cursor: pointer;
+
+}
+
+.customize_img {
+    width: 30%;
+}
+
+.customize svg {
+    /*top: 0.1rem;*/
+    width: 23px;
+    margin-top: 0.3rem;
+    margin-left: 0.4rem;
+    fill: var(--customize-pen);
+}
+.customize p {
+    height: auto;
+    width: 70%;
+    font-size: smaller;
+    align-self: center;
+    margin-top: 1rem;
+    margin-right: 0.4rem;
+    color: var(--customize-pen);
+}
+
 /* First breakpoint at 690 px*/
-@media (max-width: 690px) {
+@media (max-width: 800px) {
     .shortcuts-container {
         grid-template-columns: auto auto auto auto;
     }
@@ -305,7 +349,7 @@ footer.footer-nav-bar {
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 730px) {
     .shortcuts-container {
         grid-template-columns: auto auto auto;
     }
@@ -320,6 +364,7 @@ footer.footer-nav-bar {
         border: none;
         padding: 0.4em;
         border-radius: 0.3em;
+        min-width: 115px;
     }
     .seven-to-eight {
         display: none;
@@ -332,16 +377,39 @@ footer.footer-nav-bar {
     footer {
         display:none;
     }
+    .customize p {
+        display:none;
+        width: 0%
+    }
 
     .customize {
-        display: none;
+        position: fixed;
+        bottom: 6rem;
+        right: 1rem;
+        display: flex;
+        border-radius: 3em;
+        box-shadow: 0 0 5px var(--nav-link-gray);
+        width: 2rem;
+        height: 33px;
     }
+
+    .customize_img {
+        width:100%;
+    }
+    .customize svg {
+        margin-top: 0.3rem;
+    }
+
+
+
 }
 
 @media (max-width: 450px) {
     .shortcuts-container {
         display: none;
     }
-
+    .customize {
+        display: none;
+    }
 }
 
